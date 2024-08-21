@@ -32,26 +32,4 @@ Gem::Specification.new do |s|
   # Docs Information
   s.extra_rdoc_files = ["docs/changelog.rst", "LICENSE.txt", "README.md", "lib/susy.rb"]
   s.rdoc_options = ["--line-numbers", "--inline-source", "--title", "Susy", "--main", "README.md"]
-
-  dependencies = {
-    "sass" => "~> 3.3.0"
-  }
-  # Project Dependencies
-  if s.respond_to? :specification_version then
-    s.specification_version = 3
-
-    if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
-      dependencies.each do |project, version|
-        s.add_runtime_dependency(project, version)
-      end
-    else
-      dependencies.each do |project, version|
-        s.add_dependency(project, version)
-      end
-    end
-  else
-    dependencies.each do |project, version|
-      s.add_dependency(project, version)
-    end
-  end
 end
