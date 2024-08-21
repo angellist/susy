@@ -16,7 +16,9 @@ end
 #
 # Sass 3.3 performance tweaks, overrides methods defined in sass code
 #
-require 'sass/plugin' if defined?(Sass)
+begin
+require 'sass/plugin'
+
 module Sass::Script::Functions
   def rb_susy_deep_has_key(map, *keys)
     v = nil
@@ -68,4 +70,6 @@ module Sass::Script::Functions
     end
     val
   end
+end
+rescue LoadError
 end
